@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../common.css">
+        <link rel="stylesheet" href="api.css">
+    </head>
+    <body>
+        <h4><a href="javascript:history.back()" style="text-decoration: none;">&lt; 이전 페이지로 돌아가기</a></h4>
+        <h1>!추천</h1>
+        <h3>저에게 콘텐츠나 게임을 추천합니다.</h3>
+        <p>방송에서 할만한 내용을 저에게 추천합니다.</p>
+        <p>다만 추천하기 전에...</p>
+        <p>1. 전 FPS(First Person Shooter) 게임은 거의 무경험이라, 아직까진 배틀그라운드나 포트나이트와 같은 게임은 적응(?)이 좀 필요합니다. 둘 다 아직 1킬도 못해봤어요.</p>
+        <p>2. 제가 현재 가지고 있는(혹은 다운로드 이력이 있는) <b>모든</b> PC 게임의 목록은 아래와 같습니다. 다만, 밑으로 갈수록 안하는 것들이라 보셔야 하며(특히 마인크래프트 Windows 10 에디션과 그 밑은 거의 안함), 위로 갈수록 자주하는 게임입니다.</p>
+        <ul>
+            <li>마인크래프트 자바 에디션(Minecraft Java Edition)</li>
+            <li>배틀그라운드(PLAYERUNKNOWN'S BATTLEGROUNDS)</li>
+            <li>포트나이트(Fortnite)</li>
+            <li>휴먼: 폴 플랫(Human: Fall Flat)</li>
+            <li>게리모드(Garry's Mod)</li>
+            <li>마인크래프트 Windows 10 에디션(Minecraft Windows 10 Edition)</li>
+            <li>Asphalt 8</li>
+            <li>Need For Speed: Most Wanted</li>
+            <li>Relic Hunters Zero</li>
+            <li>Zombie Defense</li>
+            <li>Killing Floor</li>
+            <li>Team Fortress 2</li>
+        </ul>
+        <p>3. 배그 중옵이나(조금 더 심한 끊김(?) 감수하면 상옵도 가능, 최상옵은 무리일듯) 가능할 정도 컴퓨터면, 사양때문에 <b>못돌릴</b> 게임은 없을거라 봅니다. 어떻게든 옵션타협 할테니 걱정 마세요.</p>
+        <p>4. 당연한 이야기지만, 수위가 너무 지나친 게임이나 콘텐츠 추천은 삼가해주세요. 공포게임은 OK입니다.</p>
+        <p>5. 독립형 게임 말고 마인크래프트에서 할 수 있는 게임이나 콘텐츠도 추천 받습니다(제가 했던 Mineplex 서버의 Block Hunt나 Hypixel 서버의 Murder Mystery같은 게임같은).</p>
+        <p>6. 하지만 잊지 마세요, 저도 돈이 있어야 삽니다... ㅠㅠㅠ... 채널 후원은 제 사이트의 왼쪽 링크들 중에 있습니다. 후원한다고 당장 돈이 들어오는건 아니지만요...</p>
+        <p>7. 서버에 저장되는 정보는 아래와 같습니다.</p>
+        <ul>
+            <li>날짜 - BLOKKY의 게시판 시스템에 공통적으로 사용되며, 추천 목록 관리에 사용될 수 있음</li>
+            <li>Twitch ID - BLOKKY의 게시판 시스템에 공통적으로 사용되며, 같은 시청자가 같은 내용을 중복 추천하는것을 막고, 추천 목록 관리에 사용될 수 있음</li>
+            <li>
+                추천한 내용 - 아래와 같은 처리 과정을 거친 다음 저장됩니다.
+                <ol>
+                    <li>소문자를 모두 대문자로 변환합니다.</li>
+                    <li>공백은 모두 지워집니다.</li>
+                    <li>NULL(Nightbot에서 입력되지 않은 명령어 파라메터는 모두 null이고, 그게 대문자로 바뀌어서 NULL)은 모두 지워집니다.</li>
+                    <li>최종 내용 길이는 64자로 제한됩니다.</li>
+                </ol>
+            </li>
+        </ul>
+
+        <h2>사용법</h2>
+        <div class="codeArea">
+            !추천 [추천할 내용]
+        </div>
+        <h2>출력 내용</h2>
+        <h3>성공한 경우</h3>
+        <div class="codeArea">
+            @[시청자] -> 정상적으로 처리되었습니다. 감사합니다 :D
+        </div>
+        <p>참고: Twitch에선 :D가 이모티콘으로 치환되어 나옵니다.</p>
+        <h3>실패한 경우</h3>
+        <div class="codeArea">
+            @[시청자] -> 시청자를 식별할 수 없습니다. 채팅방에서 다시 시도해주세요.
+        </div>
+        <p>-&gt; Nightbot 관련 HTTP 헤더가 정상적으로 넘어오지 않은 경우입니다. <b>제 Twitch 채팅방에서</b> 다시 시도해주세요.</p>
+        <div class="codeArea">
+            @[시청자] -> 내용이 비어있습니다. 명령어 뒤에 내용을 빼먹으신건 아닌가요?
+        </div>
+        <p>-&gt; 명령어 뒤에 추천 내용을 뺴먹으신 경우입니다.</p>
+        <div class="codeArea">
+            @[시청자] -> 한 시청자가 같은 내용을 중복 등록하는것은 허용되지 않습니다.
+        </div>
+        <p>-&gt; 같은 시청자가 같은 내용을 중복 등록을 시도한 경우입니다. 다른 내용이라도 비슷한 내용이면 이 메시지가 나올 수 있습니다. 자세한 내용은 아래의 "저장되는 정보" 섹션을 참조하세요.</p>
+        <div class="codeArea">
+            @[시청자] -> 게시판을 찾을 수 없습니다.
+        </div>
+        <div class="codeArea">
+            @[시청자] -> 함수를 찾을 수 없습니다.
+        </div>
+        <div class="codeArea">
+            @[시청자] -> 처리되지 않은 예외가 발생하였습니다.
+        </div>
+        <div class="codeArea">
+            Remote Server Returned Code [숫자]
+        </div>
+        <p>-&gt; 이런 메시지가 나온다면 그 경우는 보통 버그입니다.</p>
+        
+        <h3>메시지가 이상하게 나오는 경우</h3>
+        <p>사실 이 경우는 버그입니다만, 아래와 같은 형식으로 메시지가 나올수도 있습니다.</p>
+        <div class="codeArea">
+            @[시청자] -> {"StatusCode":400,"StatusMessage":"Cannot idenfify user"}
+        </div>
+        <p>이는 명령어 버그 혹은 서버 버그이며, 원래는 위에서 이야기한 메시지들처럼 나와야합니다.</p>
+        <p>모든 경우를 설명하기엔 너무 길어져버리니, 성공적인 경우 어떻게 나오는지만 알려드릴게요(+위에꺼는 시청자 식별 실패한 경우입니다).</p>
+        <div class="codeArea">
+            @[시청자] -> {"StatusCode":200,"StatusMessage":"Successful"}
+        </div>
+        <p>이렇게 "StatusCode":200이 들어가있으면 정상입니다.</p>
+        <p>그렇지 않고 "StatusCode":400같은 다른게 나온다면 그건 오류입니다.</p>
+        <h2>구현</h2>
+        <div class="codeArea">
+            <pre>@$(user) -> $(urlfetch http://blokkytv.iptime.org:8101/Board/NewArticle?BoardID=suggestion&Contents=$(querystring $(1)$(2)$(3)$(4)$(5)$(6)$(7)$(8)$(9))&HumanReadable=true)</pre>
+        </div>
+        <p><b>blokkytv.iptime.org는 개인 서버입니다. 제발 공격은 하지 마세요.</b></p>
+    </body>
+</html>

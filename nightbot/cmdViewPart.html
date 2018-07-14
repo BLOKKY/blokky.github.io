@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../common.css">
+        <link rel="stylesheet" href="api.css">
+    </head>
+    <body>
+        <h4><a href="javascript:history.back()" style="text-decoration: none;">&lt; 이전 페이지로 돌아가기</a></h4>
+        <h1>!시참조회</h1>
+        <p><b>참고: 블로키 본인만 사용 가능한 명령어입니다.</b></p>
+        <h3>!시참 명령어로 등록된 Minecraft 사용자들을 조회합니다.</h3>
+        <p>!시참 명령어로 등록된 Minecraft 사용자들을 조회합니다. !시참뽑기 사용 없이 등록된 사용자들을 확인하려 만들었습니다.</p>
+        <h2>사용법</h2>
+        <div class="codeArea">
+            !시참조회
+        </div>
+        <h2>출력 내용</h2>
+        <p><b>이 명령어는 한글 출력 없이 JSON 형태로만 출력됩니다.</b></p>
+        <h3>성공한 경우</h3>
+        <div class="codeArea">
+            {"StatusCode":200,"StatusMessage":"Successful","Articles":{"[Minecraft 사용자명 1]":{"Likes":0},"[Minecraft 사용자명 2]":{"Likes":0},...} }
+        </div>
+        <h3>실패한 경우</h3>
+        <div class="codeArea">
+            {"StatusCode":404,"StatusMessage":"Board not found"}
+        </div>
+        <p>이렇게 "StatusCode":404같이 200이 아닌 다른게 나온다면 그건 오류입니다.</p>
+        <h2>구현</h2>
+        <p></p>
+        <div class="codeArea">
+            <pre>$(urlfetch http://blokkytv.iptime.org:8101/Board/GetArticles?BoardID=mcpart)</pre>
+        </div>
+        <p><b>blokkytv.iptime.org는 개인 서버입니다. 제발 공격은 하지 마세요.</b></p>
+    </body>
+</html>

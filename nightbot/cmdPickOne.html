@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../common.css">
+        <link rel="stylesheet" href="api.css">
+    </head>
+    <body>
+        <h4><a href="javascript:history.back()" style="text-decoration: none;">&lt; 이전 페이지로 돌아가기</a></h4>
+        <h1>!시참뽑기</h1>
+        <p><b>참고: 채널 관리자 이상만 사용 가능한 명령어입니다.</b></p>
+        <h3>시청자 한명을 뽑습니다.</h3>
+        <p>시청자들(!시참을 통해 등록한 Minecraft 사용자들)중 한명을 뽑는 명령어입니다.</p>
+        <h2>사용법</h2>
+        <div class="codeArea">
+            !시참뽑기
+        </div>
+        <h2>출력 내용</h2>
+        <h3>성공한 경우</h3>
+        <div class="codeArea">
+            뽑았습니다!
+            뽑힌 시청자: Minecraft 플레이어 [사용자명]
+        </div>
+        <h3>실패한 경우</h3>
+        <div class="codeArea">
+            @[시청자] -> 게시판을 찾을 수 없습니다.
+        </div>
+        <div class="codeArea">
+            @[시청자] -> 함수를 찾을 수 없습니다.
+        </div>
+        <div class="codeArea">
+            @[시청자] -> 처리되지 않은 예외가 발생하였습니다.
+        </div>
+        <div class="codeArea">
+            Remote Server Returned Code [숫자]
+        </div>
+        <p>-&gt; 이런 메시지가 나온다면 그 경우는 보통 버그입니다.</p>
+        
+        <h3>메시지가 이상하게 나오는 경우</h3>
+        <p>사실 이 경우는 버그입니다만, 아래와 같은 형식으로 메시지가 나올수도 있습니다.</p>
+        <div class="codeArea">
+            @[시청자] -> {"StatusCode":404,"StatusMessage":"Board not found"}
+        </div>
+        <p>이는 명령어 버그 혹은 서버 버그이며, 원래는 위에서 이야기한 메시지들처럼 나와야합니다.</p>
+        <p>모든 경우를 설명하기엔 너무 길어져버리니, 성공적인 경우 어떻게 나오는지만 알려드릴게요(+위에꺼는 게시판을 찾을 수 없는).</p>
+        <div class="codeArea">
+            @[시청자] -> {"StatusCode":200,"StatusMessage":"Successful"}
+        </div>
+        <p>이렇게 "StatusCode":200이 들어가있으면 정상입니다.</p>
+        <p>그렇지 않고 "StatusCode":404같은 다른게 나온다면 그건 오류입니다.</p>
+        <h2>구현</h2>
+        <p></p>
+        <div class="codeArea">
+            <pre>$(urlfetch http://blokkytv.iptime.org:8101/MCAudiPart/PickOne?BoardID=mcpart&HumanReadable=true)</pre>
+        </div>
+        <p><b>blokkytv.iptime.org는 개인 서버입니다. 제발 공격은 하지 마세요.</b></p>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+table {
+    width: 95%;
+}
+table td, table th {
+    padding: 5px;
+}
+table th {
+    background: #757575;
+    color: #FFFFFF;
+}

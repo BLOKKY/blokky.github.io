@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../common.css">
+        <link rel="stylesheet" href="api.css">
+    </head>
+    <body>
+        <h4><a href="javascript:history.back()" style="text-decoration: none;">&lt; 이전 페이지로 돌아가기</a></h4>
+        <h1>!시참</h1>
+        <h3>마인크래프트 서바이벌에 참여하고 싶다는 의사를 밝힙니다.</h3>
+        <p>제 마인크래프트 서바이벌 참여를 희망한다는 의사를 밝힙니다. 참가 희망자가 있다면 매일 두명씩 뽑아 진행합니다.</p>
+        <p>참여 희망자는 오후 4시 10분 전까지 방송에 들어와야 하나, 그날 마인크래프트를 한다는 보장은 없습니다(주 콘텐츠가 마인크래프트이긴 하나).</p>
+        <p>또한, 참여 희망자는 명령어에 본인의 Minecraft 사용자명을 적어야 하며, 유효한 Minecraft 사용자명인지 확인이 되고 나서 등록이 진행됩니다.</p>
+        <p>이 등록 과정은 100% 자동이며, 따라서 제가 자고 있는 시간에도 등록하셔도 제 서버와 모장 API 서버만 멀쩡하다면 잘 됩니다.</p>
+        <p>서버에 저장되는 정보</p>
+        <ul>
+            <li>날짜 - BLOKKY의 게시판 시스템에 공통적으로 사용되며, 시청자 참여 요청 목록 관리에 사용</li>
+            <li>Twitch ID - BLOKKY의 게시판 시스템에 공통적으로 사용되며, 시청자 참여 요청 목록 관리에 사용될 수 있음</li>
+            <li>Minecraft 사용자명(닉네임) - 뽑기 결과 출력, 서버 화이트리스트(접속 가능한 사용자 목록)에 추가하는 데 사용</li>
+        </ul>
+        <p>시청자를 뽑은 날에는, 서버 점검때 그날 뽑기 이전까지의 기록은 모두 삭제됩니다.</p>
+        <h2>사용법</h2>
+        <div class="codeArea">
+            !시참 [Minecraft 사용자명]
+        </div>
+        <p><b>주의: Minecraft 사용자명을 꼭 적으세요. 실수로 적지 않고 실행하시면 사용자명 부분이 null로 넘어오는데, 실제로 Minecraft에 null이라는 사용자가 있기에 정상적인 등록으로 처리됩니다.</b></p>
+        <h2>출력 내용</h2>
+        <h3>성공한 경우</h3>
+        <div class="codeArea">
+            @[시청자] -> 정상적으로 처리되었습니다. 감사합니다 :D
+        </div>
+        <p>참고: Twitch에선 :D가 이모티콘으로 치환되어 나옵니다.</p>
+        <h3>실패한 경우</h3>
+        <div class="codeArea">
+            @[시청자] -> 시청자를 식별할 수 없습니다. 채팅방에서 다시 시도해주세요.
+        </div>
+        <p>-&gt; Nightbot 관련 HTTP 헤더가 정상적으로 넘어오지 않은 경우입니다. <b>제 Twitch 채팅방에서</b> 다시 시도해주세요.</p>
+        <div class="codeArea">
+            @[시청자] -> 이미 시청자 참여 요청 목록에 등록된 Minecraft 닉네임입니다.
+        </div>
+        <p>-&gt; 이미 같은 Minecraft 사용자명이 등록된 경우입니다.</p>
+        <div class="codeArea">
+            @[시청자] -> 죄송합니다. Minecraft 닉네임 검증에 실패했습니다. 닉네임을 확인해보세요.
+        </div>
+        <p>-&gt; 보통 Minecraft 닉네임을 잘못 입력한 경우입니다. 닉네임을 확인한 후 다시 시도해주세요.</p>
+        <div class="codeArea">
+            @[시청자] -> Mojang 서버에 문제가 있어 Minecraft 닉네임을 검증할 수 없습니다. 다시 시도해 주세요.
+        </div>
+        <p>-&gt; Mojang 서버에서 이 기능에 필요한 서버가 정상적이지 않다고 보고한 경우입니다. 나중에 다시 시도해 주세요.</p>
+        <div class="codeArea">
+            @[시청자] -> 게시판을 찾을 수 없습니다.
+        </div>
+        <div class="codeArea">
+            @[시청자] -> 함수를 찾을 수 없습니다.
+        </div>
+        <div class="codeArea">
+            @[시청자] -> 처리되지 않은 예외가 발생하였습니다.
+        </div>
+        <div class="codeArea">
+            Remote Server Returned Code [숫자]
+        </div>
+        <p>-&gt; 이런 메시지가 나온다면 그 경우는 보통 버그입니다.</p>
+        
+        <h3>메시지가 이상하게 나오는 경우</h3>
+        <p>사실 이 경우는 버그입니다만, 아래와 같은 형식으로 메시지가 나올수도 있습니다.</p>
+        <div class="codeArea">
+            @[시청자] -> {"StatusCode":400,"StatusMessage":"Cannot idenfify user"}
+        </div>
+        <p>이는 명령어 버그 혹은 서버 버그이며, 원래는 위에서 이야기한 메시지들처럼 나와야합니다.</p>
+        <p>모든 경우를 설명하기엔 너무 길어져버리니, 성공적인 경우 어떻게 나오는지만 알려드릴게요(+위에꺼는 시청자 식별 실패한 경우입니다).</p>
+        <div class="codeArea">
+            @[시청자] -> {"StatusCode":200,"StatusMessage":"Successful"}
+        </div>
+        <p>이렇게 "StatusCode":200이 들어가있으면 정상입니다.</p>
+        <p>그렇지 않고 "StatusCode":400같은 다른게 나온다면 그건 오류입니다.</p>
+        <h2>구현</h2>
+        <div class="codeArea">
+            <pre>@$(user) -> $(urlfetch http://blokkytv.iptime.org:8101/MCAudiPart/Register?BoardID=mcpart&MinecraftUser=$(1)&HumanReadable=true)</pre>
+        </div>
+        <p><b>blokkytv.iptime.org는 개인 서버입니다. 제발 공격은 하지 마세요.</b></p>
+    </body>
+</html>

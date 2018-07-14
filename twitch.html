@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="common.css">
+        <style>
+            body {
+                padding: 10px;
+            }
+            h1 {
+                text-align: center;
+            }
+            td.field {
+                font-weight: bold;
+                text-align: right;
+            }
+            ul {
+                list-style: none;
+            }
+            ul li {
+                letter-spacing: 2px;
+            }
+            a {
+                color: #000000;
+            }
+            .viewerCount {
+                width: 128px;
+            }
+        </style>
+        <link rel="stylesheet" href="../table.css">
+    </head>
+    <body>
+        <h1>제 방송</h1>
+        <h2>방송에서 주로 하는 내용</h2>
+        <p>방송에선 주로 마인크래프트 서바이벌 맵(싱글플레이어)을 합니다. 평화롭게 마크를 하면서 IRL(In-Real-Life, 일상적 대화를 나누는 방송)이 되기도 하고요.</p>
+        <p>아직 다른건 별로 없습니다. 배틀그라운드나 포트나이트는 아직 실력이 ...이라 못하겠고요.</p>
+        <p>휴먼: 폴 플랫은 이미 해봤고...</p>
+        <p><b>다만, 서바이벌 맵 콘텐츠에 대해서는, 사탕수수 키우고 농사를 하는것부터, 엔더드래곤을 잡는것까지 계획을 짜 놓았습니다.</b></p>
+        <p>그러니 평화롭게 제가 마크를 하는걸 보시면서, 이런저런 이야기를 나누는 공간이 되었으면 좋겠네요.</p>
+        <p>혹시 여러분이 재밌게 하신 게임이 있어서 추천하고 싶으신가요? 혹은 제가 방송에서 했으면 좋겠다고 생각하는게 있으신가요?</p>
+        <p>!추천 명령어를 사용하면 추천해주실 수 있습니다. <a href="nightbot/cmdSuggest.html">여기를 클릭하여 자세한 사용법과 알아둬야 할 점들을 볼 수 있어요.</a></p>
+        <h2>하위 메뉴</h2>
+        <ul>
+            <li><a href="filtering.html">채팅 필터링 안내</a></li>
+            <li><a href="nightbot/nightbot.html">Nightbot 명령어 레퍼런스</a></li>
+            <li><a href="bas.html">BLOKKY API 서버에 관해</a></li>
+        </ul>
+        <h2>여러분께서 추천해주신 콘텐츠 목록</h2>
+        <div id="status">상태: 잠시만 기다려 주세요.</div>
+        <div id="suggestions">
+        </div>
+        <script src="pingudan.js"></script>
+        <script>
+            function onStatusChange(status) {
+                document.getElementById("status").innerHTML = "추천 목록 다운로드 상태: <b>" + status + "</b>";
+            }
+            function onArticleListAvailable(articleList) {
+                var html = ""
+                html = "<table><tr><th>추천해주신 내용</th><th class=\"viewerCount\">추천한 시청자 수</th></tr>";
+                for (var i in articleList) {
+                    var article = articleList[i]
+                    html += "<tr><td>" + article.Article + "</td><td class=\"viewerCount\">" + (article.Likes + 1) + "</td></tr>";
+                }
+                html += "</table>";
+                document.getElementById("suggestions").innerHTML = html;
+            }
+            BAS.Board_GetArticles("suggestion", onStatusChange, onArticleListAvailable);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="common.css">
+        <style>
+            body {
+                padding: 10px;
+            }
+            h1 {
+                text-align: center;
+            }
+            ul {
+                list-style: none;
+            }
+            ul li {
+                letter-spacing: 2px;
+            }
+            div.softwareSection {
+                padding: 0px 20px 10px 20px;
+                text-align: center;
+                color: white;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+            div.softwareSection h1 {
+                font-size: 4.0em;
+                letter-spacing: 5px;
+                padding-top: 20px;
+            }
+            #nightbotCmds {
+                background: #EF5350;
+            }
+            
+            #bas {
+                background: #EC407A;
+            }
+            #noteblockVisuals {
+                background: #BA68C8;
+            }
+            #m6502 {
+                background: #9575CD;
+            }
+            #a1emu {
+                background: #7986CB;
+            }
+            #nbsVisuals {
+                background: #1E88E5;
+            }
+            #rru {
+                background: #0288D1;
+            }
+            #rastemp {
+                background: #0097A7;
+            }
+            #bkernal {
+                background: #009688;
+            }
+            #bosbios {
+                background: #43A047;
+            }
+            #bosuefi {
+                background: #558B2F;
+            }
+            #whereami {
+                background: #827717;
+            }
+            a {
+                color: #FFFFFF;
+            }
+            .shortDescription {
+                letter-spacing: 2px;
+            }
+            .urlText {
+                letter-spacing: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>개발한 소프트웨어</h1>
+        <h2>오픈 소스</h2>
+        <div class="softwareSection", id="nightbotCmds">
+            <h1>Nightbot 명령어들</h1>
+            <p>Nightbot은 Twitch나 YouTube 생방송에 사용할 수 있는 써드파티 서비스로, 사용자 지정이 가능한 강력한 명령어 시스템을 제공합니다.</p>
+            <p>저도 그걸 활용하지 않을 수 없죠. 그래서 저의 명령어들 중 일부는 상황에 따라 다른 종류의 답변을 하기도 합니다.</p>
+            <p>예를 들어, !게임 명령어는</p>
+            <p><i>- 스팀 게임을 하는중이면 현재 플레이중인 Steam 게임의 이름이 뜹니다.</i></p>
+            <p><i>- 스팀에 현재 플레이중인 게임이 없으면, 현재 방송정보에 등록된 게임 이름이 뜹니다.</i></p>
+            <p><i>- 방송중이 아니면 방송중이 아니라고 뜹니다(따라서 제가 방송중이 아닐때 스팀 게임을 하고 있어도 공개되지 않습니다).</i></p>
+            <p>이런 기능은 Nightbot의 JavaScript 실행 기능을 활용하였습니다.</p>
+            <p>명령어에 관한 정보들은 <a href="nightbot/nightbot.html">여기에서</a> 찾으실 수 있습니다.</p>
+        </div>
+        <h2>비공개</h2>
+        <div class="softwareSection", id="bas">
+            <h1>BAS</h1>
+            <h2 class="shortDescription">BLOKKY API 서버</h2>
+            <p>공개적인 API는 아니지만, 어쩄든 외부 서버에서 제 데이터에 접근할 수 있는 기능을 제공하니 API는 맞습니다.</p>
+            <p>BAS는 아직까진 역활은 하나밖에 없습니다.</p>
+            <p>여러분이 !추천 명령어를 쓰거나(상단 메뉴 중 트위치 방송 참고), 추천 목록을 조회할때(얘도 그 메뉴에 있습니다)</p>
+            <p>데이터를 저장하고 받아오는 서버입니다.</p>
+            <p>서버는 Raspberry Pi 2 Model B로 구동중이며, Node.js 기반입니다.</p>
+            <p>서버 상태는 누구나 채팅창에서 !서버상태 명령어로 확인 가능합니다.</p>
+            <p>쳤을때 "블로키 API 서버(BAS)는 잘 동작중입니다." 라고 나온다면 서버가 잘 돌아가고 있는것입니다.</p>
+        </div>
+        <div class="softwareSection", id="noteblockVisuals">
+            <h1>NoteBlockVisuals</h1>
+            <h2 class="shortDescription">밑에서 튀어올라오는 막대로 커버 영상에 효과를 주는 소프트웨어</h2>
+            <p>딱 한번 쓰인 NBSVisuals 이후 개발되어, 지금까지도 <b>계속</b> 제 사랑을 받고 커버 영상에 사용중인 소프트웨어입니다.</p>
+            <p>제 커버 영상들에서 가운데 보이는 막대가 바로 이 소프트웨어를 이용한것이죠.</p>
+            <p>허나, 소프트웨어를 사용하기 위해서는 Processing이 사전에 설치되어 있어야 하며</p>
+            <p>설치와 사용이 그리 어렵진 않지만 공개하게 된다 하면 UI, 기능을 업그레이드 시켜서 HTML5 버전으로 공개하게 될것같네요.</p>
+        </div>
+        <div class="softwareSection", id="m6502">
+            <h1>m6502.c</h1>
+            <h2 class="shortDescription">MOS 테크놀로지 6502 CPU 에뮬레이션 코드</h2>
+            <p>MOS 6502는 그 유명한 애플 I, 애플 II, 코모도어 64 등에 쓰였던 CPU이며(코모도어 64는 정확힌 6510이나, 6502 좀 수정한게 전부)</p>
+            <p>그 외에도 아타리 2600, 닌텐도 엔터테이먼트 시스템(얘는 한 칩에 6502 코어와 사운드 코어 내장) 등 수없이 많은 가정용 컴퓨터에 쓰인 CPU입니다.</p>
+            <p>코모도어 64 에뮬레이터를 만들 목적으로 개발을 시작했으며, 이 CPU 에뮬레이터로 코모도어 64 시스템을 부팅시킬 수 있고 애플 I 동작도 잘 됩니다.</p>
+            <p>M6502는 6502 CPU의 명령어와 인터럽트 시스템을 소프트웨어로 재현하려 노력하며, 메모리 어드레싱 처리는 원하는대로 할 수 있습니다.</p>
+            <p>허나, 숨겨져있는 버그가 있을수도 있으며, 더이상 개발되진 않지만 오픈소스로 공개하는걸 고려하는 중입니다.</p>
+            <p>그리고 에뮬레이터의 모든 부분을 테스트하긴 힘들다는 점도 알아두시기 바랍니다. 그리고 CPU 에뮬레이터 개발이란거 자체가 쉬운게 아니예요 ㅠㅠ</p>
+        </div>
+        <div class="softwareSection", id="a1emu">
+            <h1>A1Emu</h1>
+            <h2 class="shortDescription">애플 I 에뮬레이터</h2>
+            <p>애플 I은 스티브 잡스와 함께 애플을 설립한 스티브 워즈니악이 설계하고, 우리가 아는 그 애플이라는 회사를 세워 판매한 컴퓨터입니다.</p>
+            <p>이 아이는 위에서도 언급했지만 MOS 6502 CPU를 사용했으며, 꽤 단순한 I/O를 가지고 있습니다.</p>
+            <p>그리고 그런 면에서, CPU 에뮬레이션 코드인 m6502.c를 테스트하기 딱 좋아, m6502.c 테스트에 썼습니다.</p>
+            <p>얘도 더이상 개발되진 않지만 오픈소스로 공개하는걸 고려하는 중입니다.</p>
+        </div>
+        <h2>오픈 소스이나 더 이상 관리되지 않음(문서 수정 제외)</h2>
+        <div class="softwareSection", id="nbsvisuals">
+            <h1>NBSVisuals</h1>
+            <h2 class="shortDescription">노트블럭 파일을 신디지아 스타일로 보여줍니다.</h2>
+            <p>밑에 키보드가 있고 위에서 노트가 떨어지는 형식으로 보여주는 프로그램입니다. 소리는 없습니다.</p>
+            <p>본래 제 커버 영상용으로 만들었으나, 성능 문제가 있어 한번 쓰고 더 이상 쓰이지 않지만 오픈소스로 공개되어 있습니다.</p>
+            <p>제가 오마이걸 - 컬러링북 커버에서 썼던 프로그램이며, 작동 영상은 <a href="https://www.youtube.com/watch?v=AkU-aAIgmUQ">여기를 누르시면</a> 볼 수 있습니다(실제 프로그램 배경은 회색인 점 참고하세요).</p>
+            <p>마인크래프트와 OpenComputers 모드를 필요로 하며, OpenComputers 기본 설정 특성상 설치가 좀 어렵게 느껴지실겁니다.</p>
+            <p>소스 코드(설치, 사용 방법(영문)도 있습니다): <a class="urlText" href="https://github.com/BLOKKY/NBSVisuals">https://github.com/BLOKKY/NBSVisuals</a></p>
+            <p>이 프로그램의 후속은 NoteBlockVisuals이며, 얘는 공개된 소프트웨어는 아닙니다.</p>
+        </div>
+        <div class="softwareSection", id="rru">
+            <h1>RRU</h1>
+            <h2 class="shortDescription">RISC OS ROM Utility</h2>
+            <p>라즈베리 파이로 RISC OS를 쓰던 시절, 부팅 화면 이미지를 바꾸고 싶어 개발한 유틸리티입니다.</p>
+            <p>다른 RISC OS ROM에서도 동작하는진 모르겠지만, 라즈베리 파이 버전에서는 동작하며</p>
+            <p>ROM 이미지 내의 파일 목록을 조회하고, 컴퓨터로 파일을 가져오거나 ROM 이미지 내 파일 내용을 교체할 수 있습니다.</p>
+            <p>예를 들어, 이런 명령어를 통해 부팅 화면 이미지를 교체할 수 있습니다:</p>
+            <p>rru write RISCOS.IMG Resources.BootFX.1920x1080 1920x1080.jpg</p>
+            <p>소스 코드(사용법과 자세한 설명(영문)도 있습니다): <a class="urlText" href="https://github.com/BLOKKY/rru">https://github.com/BLOKKY/rru</a></p>
+            <p>이 소프트웨어는 조심히 사용해야 하며, RISC OS ROM 파일은 사전에 백업해두시기 바랍니다.</p>
+            <p>또한, C 소스 코드의 형태로 제공되므로 알아서 컴파일 후 사용하셔야 해요.</p>
+        </div>
+        <div class="softwareSection", id="rastemp">
+            <h1>RasTemp</h1>
+            <h2 class="shortDescription">라즈베리 파이 기반 온도 모니터링 시스템</h2>
+            <p>RHT-11 온도센서와 라즈베리 파이, 그리고 안드로이드 기기를 활용한 온도 모니터링 시스템입니다.</p>
+            <p>안드로이드 기기가 라즈베리 파이에 접속하고, 라즈베리 파이는 연결된 온도 센서의 값을 보여주는 형식이죠.</p>
+            <p>이 소프트웨어는 안드로이드 기기와 라즈베리 파이를 모두 이용하는 만큼, 소프트웨어도 크게 두 부분으로 나뉩니다:</p>
+            <p>라즈베리 파이 소프트웨어와 안드로이드쪽 소프트웨어(Android Studio 프로젝트 형태로 제공됩니다)</p>
+            <p>소스 코드(설치, 사용법(영문)도 있습니다. 안드로이드 앱은 Android 폴더를 Android Studio에서 열고 빌드하시면 됩니다):</p>
+            <p><a class="urlText" href="https://github.com/BLOKKY/rastemp">https://github.com/BLOKKY/rastemp</a></p>
+        </div>
+        <h2>끝내 반도 완성 못한 소프트웨어들</h2>
+        <div class="softwareSection", id="bkernal">
+            <h1>BLOKKY KERNAL</h1>
+            <h2 class="shortDescription">라즈베리 파이용 코모도어 64 에뮬레이션 커널</h2>
+            <p>KERNAL이라는 이름은 코모도어가 8비트 컴퓨터에 사용했던 커널(Kernel)의 이름입니다.</p>
+            <p>사실 원래는 E를 A로 잘못쓴게 맞긴 하나, 그냥 공식적으로 써버리더라고요.</p>
+            <p>아무튼, BLOKKY KERNAL은 Linux 기반도 아닙니다, Windows 기반도 아닙니다, 그 자체가 커널입니다.</p>
+            <p>다시 말해, BLOKKY KERNAL 자체가 라즈베리 파이를 부팅시킬 수 있는 소프트웨어입니다.</p>
+            <p>BLOKKY KERNAL은 코모도어 64를 에뮬레이션하는것을 목적으로 개발을 시작한 소프트웨어였습니다.</p>
+            <p>이를 위해 m6502.c가 만들어진 거였고, 그걸 테스트하기 위해 A1Emu가 만들어진 거였죠.</p>
+            <p>그러나 정말 이상하게도, 에뮬레이터의 개발 진행을 제대로 막은 첫번째 요인이 성능 문제였습니다.</p>
+            <p>1000MHz 컴퓨터(라즈베리 파이 제로)로 약 1MHz의 컴퓨터를 에뮬레이션하는데 성능이 느린거였어요.</p>
+            <p>그래서 저는 클럭은 낮지만 좀 더 나은 CPU를 가진 라즈베리파이 2로 포팅을 시도했으나, 비디오 문제에서 막혔습니다.</p>
+            <p>그 뒤, 라즈베리파이 2 리눅스 환경으로는 포팅했고, 큰 성능 향상이 보인 게 확인되었으나 리눅스 위에서 하는건 의미가 없었고</p>
+            <p>결국 개발을 더 이상 하지 않게 되었습니다.</p>
+        </div>
+        <div class="softwareSection", id="bosbios">
+            <h1>blokkyOS(BIOS)</h1>
+            <h2 class="shortDescription">BLOKKY Operating System(BIOS 버전)</h2>
+            <p>blokkyOS는 레거시 BIOS 기반의 32비트 운영체제 프로젝트였습니다.</p>
+            <p>그다지 특이한 건 많이 없었는데, OS 개발 관련 책에도 없던 계층형 파일시스템인 LBFS를 스스로 설계, 구현했고</p>
+            <p>따라서 디렉토리를 만들고 접근할 수 있는게 특징이였습니다. 허나 메모리 맵 상 충돌로 인한 호환성 문제로 인해</p>
+            <p>지금은 개발되지 않습니다. 또, LBFS는 설계상 결함도 가지고 있고요 ㅠㅠㅠ</p>
+            <p>BLOKKY KERNAL처럼, Linux 기반이 아닌 blokkyOS 그 자체가 컴퓨터를 부팅시킬 수 있는 소프트웨어입니다.</p>
+            <p>소스 코드는 거의 남아있지 않지만(어쩌다 그리 된건진 기억이...), 부팅 가능한 디스크 이미지는 남아있습니다(LBFS로 포맷된 HDD 이미지도 있고요).</p>
+        </div>
+        <h2>취미로 진행 중</h2>
+        <div class="softwareSection", id="bosuefi">
+            <h1>blokkyOS(UEFI)</h1>
+            <h2 class="shortDescription">BLOKKY Operating System(UEFI 버전)</h2>
+            <p>BIOS 버전은 개발되지 않지만, 현재 UEFI 버전은 개발 진행중에 있습니다.</p>
+            <p>BIOS 버전에서 있던 메모리 맴 충돌 문제점은 UEFI에서 제공하는 메모리 할당 기능으로 피했으며</p>
+            <p>UEFI 기반이기 때문에 나중에 레거시 BIOS가 완전히 사라지더라도 blokkyOS를 쓰실 수 있습니다.</p>
+            <p>또한 64비트 OS이기에, 여러분이 가지신 모든 메모리를 활용하는것도 문제 없습니다!</p>
+            <p>아직 OS는 공개되지 않았으며, 소스 코드는 Alpha 1.0을 공개하면서 공개할 생각입니다.</p>
+        </div>
+        <h2>역사 속으로</h2>
+        <div class="softwareSection" id="whereami">
+            <h1>Where Am I</h1>
+            <h2><del>나는 누구, </del>여긴 어디?</h2>
+            <p>아마 제 첫 안드로이드 앱일겁니다. App Inventor로 개발되었고요.</p>
+            <p>현재 주소를 알려주고, 그걸 음성으로까지 알려주는 앱입니다.</p>
+            <p>초기에는 블로그를 통해 배포했지만, 그 뒤 Play Store로 진출했습니다.</p>
+            <p>오늘날 잘 돌아가는 앱이라곤 못하겠습니다... ㅠㅠㅠ 원래 Java 버전으로도 하려 했으나, 그 당시 현재 주소를 얻어오는 부분에 어려움이 있어서...</p>
+            <p>현재는 Google Play 정책 위반으로 삭제되었습니다만, 이건 제가 원하지도 않던 전화 관련 권한을 App Inventor가 넣은 탓입니다.</p>
+        </div>
+    </body>
+</html>

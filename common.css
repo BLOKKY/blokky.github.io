@@ -1,0 +1,11 @@
+@font-face {
+    font-family: C64Pro;
+    src: url(C64_Pro-STYLE.ttf);
+}
+@font-face {
+    font-family: C64ProMono;
+    src: url(C64_Pro_Mono-STYLE.ttf);
+}
+body {
+    font-size: medium;
+}

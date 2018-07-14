@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../common.css">
+        <style>
+            body {
+                padding: 10px;
+            }
+            h1 {
+                text-align: center;
+            }
+            a {
+                color: black;
+            }
+            .commandName {
+                width: 80px;
+            }
+            .commandPerm {
+                width: 144px;
+            }
+        </style>
+        <link rel="stylesheet" href="../table.css">
+    </head>
+    <body>
+        <h4><a href="javascript:history.back()" style="text-decoration: none;">&lt; 이전 페이지로 돌아가기</a></h4>
+        <h1>Nightbot 명령어 레퍼런스</h1>
+        <h2>Nightbot</h2>
+        <p>Nightbot은 Twitch/YouTube 채팅 봇이며, 채팅 필터링, 곡 요청 목록, 강력한 명령어 시스템 등등을 제공합니다.</p>
+        <p>블로키도 Nightbot을 사용하고 있으며, 여기서는 <b>제가 정의한</b> 명령어들에 대해서 다룹니다.</p>
+        <p>(다만 저의 경우 채팅 필터링은 국내 서비스인 싹둑이를 사용합니다.)</p>
+        <p>Nightbot 기본 명령어는 여기서 다루지 않습니다.</p>
+        <h2>명령어들</h2>
+        <p><i>참고: 대부분의 명령어는 기존에 쓰던 싹둑이에 있던 명령들을 가져온 것입니다(거기다 업그레이드된것도 많고요).</i></p>
+        <p><b>각 명령어의 구현에 대해: </b>구현 코드를 자유롭게 쓰셔도 좋습니다. 다만, blokky, blokkytv같은 제 ID/닉네임이나 제 개인 서버 주소, PC 사양 등을 재사용하는것은 금지합니다.</p>
+        <p>제 Nightbot 명령어 페이지: <a href="https://beta.nightbot.tv/t/blokkytv/commands" target="_blank">https://beta.nightbot.tv/t/blokkytv/commands</a></p>
+        <table>
+            <tr>
+                <th class="commandName">명령어</th>
+                <th>설명</th>
+                <th>같은 기능을 하는 다른 명령어</th>
+                <th class="commandPerm">사용할 수 있는 사람</th>
+            </tr>
+            <tr>
+                <td><a href="cmdGame.html">!게임</a></td>
+                <td>현재 플레이중인 게임을 출력합니다. 스팀 게임을 하고 있는 경우 스팀에서 정보를 가져옵니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdCmds.html">!명령어</a></td>
+                <td>Nightbot 명령어 목록 링크를 출력합니다. 이 페이지와는 다릅니다.</td>
+                <td>없음(!commands와는 별개의 명령어입니다)</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdTitle.html">!방제</a></td>
+                <td>현재 방송 제목을 출력합니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdSpecs.html">!사양</a></td>
+                <td>제 PC 사양을 알려드립니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdServerStatus.html">!서버상태</a></td>
+                <td>블로키 서버 상태를 출력합니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdTime.html">!시각</a></td>
+                <td>제가 사는 곳(한국) 기준 시각을 출력합니다.</td>
+                <td><b>!시간</b></td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdParticipate.html">!시참</a></td>
+                <td>제 마크 서바이벌에 참여해보고 싶다는 의사를 밝힙니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdLang.html">!언어</a></td>
+                <td>제가 아는 프로그래밍/비 프로그래밍 언어 목록을 출력합니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdUptime.html">!업타임</a></td>
+                <td>방송 업타임을 출력합니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdSuggest.html">!추천</a></td>
+                <td>저에게 콘텐츠나 게임을 추천합니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdDonate.html">!후원</a></td>
+                <td>후원 링크를 표시합니다. 사이트 왼쪽에 있는 후원 링크와 동일합니다.</td>
+                <td><b>!기부</b></td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmd1p1.html">1+1</a></td>
+                <td>여러분이 상상하시는 그것입니다.</td>
+                <td>없음</td>
+                <td>누구나</td>
+            </tr>
+            <tr>
+                <td><a href="cmdPickOne.html">!시참뽑기</a></td>
+                <td>시청자 한명을 뽑습니다.</td>
+                <td>없음</td>
+                <td><b>관리자</b></td>
+            </tr>
+            <tr>
+                <td><a href="cmdViewPart.html">!시참조회</a></td>
+                <td>!시참 명령어로 등록된 Minecraft 사용자명 목록을 조회합니다.</td>
+                <td>없음</td>
+                <td><b>블로키 본인만</b></td>
+            </tr>
+        </table>
+    </body>
+</html>
