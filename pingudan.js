@@ -1,4 +1,4 @@
-const SERVER_ADDRESS = "http://blokkytv.iptime.org:8101";
+const SERVER_ADDRESS = "https://blokkytv.iptime.org";
 
 var BAS = {
     Board_GetArticles: function(boardID, onStatusChange, onArticleListAvailable) {
